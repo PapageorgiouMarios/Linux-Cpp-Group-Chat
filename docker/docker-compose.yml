@@ -1,0 +1,10 @@
+services:
+  database-test:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../data:/app/data
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    command: ["./build/test_database"] 
