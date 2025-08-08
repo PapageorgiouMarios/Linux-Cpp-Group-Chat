@@ -8,6 +8,7 @@
 class Server 
 {
 public:
+
     Server(int port); 
     ~Server(); 
 
@@ -15,11 +16,13 @@ public:
     void stop(); 
 
 private:
+
     int server_id; 
     int port; 
     std::vector<User*> users; 
     std::mutex users_mutex; 
 
+    // Client Management
     void acceptClients(); 
     void handleClient(User* user); 
     void broadcast(const std::string& message, User* sender); 
